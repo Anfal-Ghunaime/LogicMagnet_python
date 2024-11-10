@@ -168,11 +168,11 @@ class Stage:
                 [{'type': 'filler', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'filler', 'is_ring': False}]
             ],3),
             25: ([
-                [{'type': 'iron', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'attract', 'is_ring': True}, {'type': 'filler', 'is_ring': False}],
-                [{'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'iron', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'filler', 'is_ring': False}],
-                [{'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'filler', 'is_ring': False}],
-                [{'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'iron', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'filler', 'is_ring': False}],
-                [{'type': 'repel', 'is_ring': True}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': True}, {'type': 'iron', 'is_ring': False}, {'type': 'filler', 'is_ring': False}]
+                [{'type': 'iron', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'attract', 'is_ring': True}],
+                [{'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'iron', 'is_ring': False}, {'type': 'patch', 'is_ring': False}],
+                [{'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': False}],
+                [{'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'iron', 'is_ring': False}, {'type': 'patch', 'is_ring': False}],
+                [{'type': 'repel', 'is_ring': True}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': True}, {'type': 'iron', 'is_ring': False}]
             ],3)
         }
     
