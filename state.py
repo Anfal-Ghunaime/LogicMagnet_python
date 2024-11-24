@@ -106,6 +106,7 @@ class State:
                 for j in range(self.cols):
                     if self.canMove(i,j):
                         current_move = deepcopy(self)
+                        parent = deepcopy(self)
                         current_move.board[i][j].type = current_move.board[repel_x][repel_y].type
                         current_move.board[repel_x][repel_y].type = 'patch'
                         current_move.parent = parent

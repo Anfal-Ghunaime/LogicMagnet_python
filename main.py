@@ -19,10 +19,11 @@ from piece import Piece
 # ]
 
 init_state = [
-                [{'type': 'attract', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'iron', 'is_ring': False}, {'type': 'patch', 'is_ring': False}],
-                [{'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}],
-                [{'type': 'iron', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}],
-                [{'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'repel', 'is_ring': False}]
+                [{'type': 'iron', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'filler', 'is_ring': False}, {'type': 'filler', 'is_ring': False}],
+                [{'type': 'iron', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'filler', 'is_ring': False}, {'type': 'filler', 'is_ring': False}],
+                [{'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': False}],
+                [{'type': 'patch', 'is_ring': False}, {'type': 'attract', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': False}],
+                [{'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'iron', 'is_ring': False}]
             ]
 
 # stage_num = int(input("Enter stage number (From 1 to 25)"))

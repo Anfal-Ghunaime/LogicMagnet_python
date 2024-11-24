@@ -106,7 +106,7 @@ class Game:
         heuristic = 0
         for row in state.board:
             for piece in row:
-                if piece.type in ['iron','repel','attract'] and piece.is_ring == False:
+                if piece.type == "patch" and piece.is_ring == True:
                     heuristic = heuristic + 1
         return heuristic
     
