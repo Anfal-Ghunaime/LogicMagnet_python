@@ -6,6 +6,10 @@ class State:
         self.cols = cols
         self.board = board
         self.parent = parent
+        self.weight = 0
+
+    def __gt__(self,other):
+        return
 
     def __str__(self) -> str: 
         result = ""

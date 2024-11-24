@@ -184,5 +184,5 @@ class Stage:
         for i in range(rows):
             for j in range(cols):
                 board[i][j] = Piece(i,j,choosed_stage[i][j]['type'],choosed_stage[i][j]['is_ring'])
-        stage = State(rows,cols,board)
+        stage = State(rows,cols,board,0)
         return stage, moves

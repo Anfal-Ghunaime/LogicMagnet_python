@@ -3,10 +3,10 @@ from game import Game
 from state import State
 from piece import Piece
 
-init_state = [
-    [{'type': 'patch', 'is_ring': False},{'type': 'patch', 'is_ring': False},{'type': 'attract', 'is_ring': False}],
-    [{'type': 'patch', 'is_ring': True},{'type': 'patch', 'is_ring': True},{'type': 'iron', 'is_ring': False}]
-]
+# init_state = [
+#     [{'type': 'patch', 'is_ring': False},{'type': 'patch', 'is_ring': False},{'type': 'attract', 'is_ring': False}],
+#     [{'type': 'patch', 'is_ring': True},{'type': 'patch', 'is_ring': True},{'type': 'iron', 'is_ring': False}]
+# ]
 
 # init_state = [
 #     [{'type': 'patch', 'is_ring': False},{'type': 'patch', 'is_ring': False},{'type': 'repel', 'is_ring': False}],
@@ -18,12 +18,12 @@ init_state = [
 #     [{'type': 'patch', 'is_ring': True},{'type': 'iron', 'is_ring': True},{'type': 'patch', 'is_ring': True}]
 # ]
 
-# init_state = [
-#                 [{'type': 'attract', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'iron', 'is_ring': False}, {'type': 'patch', 'is_ring': False}],
-#                 [{'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}],
-#                 [{'type': 'iron', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}],
-#                 [{'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'repel', 'is_ring': False}]
-#             ]
+init_state = [
+                [{'type': 'attract', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'iron', 'is_ring': False}, {'type': 'patch', 'is_ring': False}],
+                [{'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}],
+                [{'type': 'iron', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}],
+                [{'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'repel', 'is_ring': False}]
+            ]
 
 # stage_num = int(input("Enter stage number (From 1 to 25)"))
 # stage_num = 25
@@ -42,6 +42,11 @@ print(stage)
 
 # game = Game(stage).loop()
 
-game = Game(stage).DFSorBFS('DFS')
+# game = Game(stage).DFSorBFS('DFS')
+
+# Game = Game(stage).UCS()
+# Game = Game(init_state).UCS()
+
+Game = Game(stage).HillClimbing()
 
 # game = Game(init_state).loop()

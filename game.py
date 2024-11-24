@@ -1,4 +1,6 @@
 from copy import deepcopy
+import random
+import heapq
 
 class Game:
     def __init__(self, init_state):
@@ -10,7 +12,13 @@ class Game:
         self.possible_moves.append(init_state)
         self.visited_states = []
         self.visited_states.append(init_state)
+        self.opened = []
+        heapq.heappush(self.opened, (0,self.init_state))
+        self.closed = []
         # self.loop()
+
+    def __gt__(self,state,other):
+        return 
     
     def DFSorBFS(self, algo):
         # for child in self.current_state.possibleMoves():
@@ -38,6 +46,89 @@ class Game:
                if move not in self.visited_states:
                    self.possible_moves.append(move) 
 
+    def checkHeapq(self, element, heap):
+        for heap_element in heap:
+            weight, board = heap_element
+            if element == board:
+                return weight
+            else:
+                return None
+            
+    def delFromHeapq(self, element, heap):
+        after_delete = []
+        for heap_element in heap:
+            weight, board = heap_element
+            if element == board:
+                continue
+            else:
+                after_delete.append((weight, board))
+        heapq.heapify(after_delete)
+        return after_delete
+
+
+    def UCScost(self, Sstate,Fstate):
+        # cost = random.randint(1,5)
+        return 1
+
+    def UCS (self):
+        while self.opened:
+            if not self.opened:
+                print('no solution')
+                break
+            least_weighted = heapq.heappop(self.opened)
+            weight, state = least_weighted
+            if state.win():
+                total_weight = 0
+                while True:
+                    total_weight = total_weight + state.weight
+                    print(state)
+                    if state.parent is None:
+                        break
+                    state = state.parent
+                print(f"total_weight: {total_weight}")
+                break
+            heapq.heappush(self.closed, (weight, state))
+            possible_states = state.possibleMoves()
+            if possible_states:
+                for possible_state in possible_states:
+                    cost = weight + self.UCScost(state, possible_state)
+                    possible_state.weight = self.UCScost(state, possible_state)
+                    in_opened = self.checkHeapq(possible_state, self.opened)
+                    in_closed = self.checkHeapq(possible_state, self.closed)
+                    if in_opened is None and in_closed is None:
+                        heapq.heappush(self.opened,(cost,possible_state)) 
+                    else:
+                        if cost < in_opened:
+                            self.opened = self.delFromHeapq(possible_state, self.opened)
+                            heapq.heappush(self.opened, (cost, possible_state))
+
+    def calcHeuristic(self,state):
+        heuristic = 0
+        for row in state.board:
+            for piece in row:
+                if piece.type in ['iron','repel','attract'] and piece.is_ring == False:
+                    heuristic = heuristic + 1
+        return heuristic
+    
+    def HillClimbing(self):
+        current_best = deepcopy(self.current_state)
+        while(True):
+            if(current_best.win()):
+                while True:
+                    print(current_best)
+                    if current_best.parent is None:
+                        break
+                    current_best = current_best.parent
+                break
+            neighbors = current_best.possibleMoves()
+            best_neighbor = neighbors[0]
+            for neighbor in neighbors:
+                if self.calcHeuristic(neighbor) < self.calcHeuristic(best_neighbor):
+                    best_neighbor = neighbor
+            if(self.calcHeuristic(best_neighbor) >= self.calcHeuristic(current_best)):
+                print(current_best)
+                break
+            current_best = best_neighbor
 
     def loop(self):
         while not self.current_state.win():
