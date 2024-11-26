@@ -111,24 +111,23 @@ class Game:
         return heuristic
     
     def HillClimbing(self):
-        current_best = deepcopy(self.current_state)
         while(True):
-            if(current_best.win()):
+            if(self.current_state.win()):
                 while True:
-                    print(current_best)
-                    if current_best.parent is None:
+                    print(self.current_state)
+                    if self.current_state.parent is None:
                         break
-                    current_best = current_best.parent
+                    self.current_state = self.current_state.parent
                 break
-            neighbors = current_best.possibleMoves()
+            neighbors = self.current_state.possibleMoves()
             best_neighbor = neighbors[0]
             for neighbor in neighbors:
                 if self.calcHeuristic(neighbor) < self.calcHeuristic(best_neighbor):
                     best_neighbor = neighbor
-            if(self.calcHeuristic(best_neighbor) >= self.calcHeuristic(current_best)):
-                print(current_best)
+            if(self.calcHeuristic(best_neighbor) >= self.calcHeuristic(self.current_state)):
+                print(self.current_state)
                 break
-            current_best = best_neighbor
+            self.current_state = best_neighbor
 
     def loop(self):
         while not self.current_state.win():

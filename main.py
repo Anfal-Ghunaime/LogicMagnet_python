@@ -26,6 +26,13 @@ init_state = [
                 [{'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'iron', 'is_ring': False}]
             ]
 
+# init_state = [
+#                 [{'type': 'attract', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'iron', 'is_ring': False}, {'type': 'patch', 'is_ring': False}],
+#                 [{'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}],
+#                 [{'type': 'iron', 'is_ring': False}, {'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}],
+#                 [{'type': 'patch', 'is_ring': False}, {'type': 'patch', 'is_ring': True}, {'type': 'patch', 'is_ring': False}, {'type': 'repel', 'is_ring': False}]
+#             ]
+
 # stage_num = int(input("Enter stage number (From 1 to 25)"))
 # stage_num = 25
 # init_state, moves = Stage().getStage(stage_num)
